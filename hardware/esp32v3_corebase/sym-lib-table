@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name esp32v3_corebase-rescue)(type Legacy)(uri ${KIPRJMOD}/esp32v3_corebase-rescue.lib)(options "")(descr ""))
+)
