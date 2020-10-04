@@ -14,17 +14,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L esp32v3_corebase-rescue:TLV75533PDBV-Regulator_Linear U1
-U 1 1 5EB4877F
-P 8950 5250
-F 0 "U1" H 8950 5592 50  0000 C CNN
-F 1 "TLV75533PDBV" H 8950 5501 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-23-5" H 8950 5550 50  0001 C CIN
-F 3 "http://www.ti.com/lit/ds/symlink/tlv755p.pdf" H 8950 5250 50  0001 C CNN
-	1    8950 5250
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR0101
 U 1 1 5EB49992
 P 8950 5600
@@ -892,8 +881,6 @@ F 3 "http://www.datasheet5.com/pdf-local-2195953" H 2850 7150 50  0001 C CNN
 	1    3200 6350
 	1    0    0    -1  
 $EndComp
-NoConn ~ 2800 6550
-NoConn ~ 2800 6750
 $Comp
 L Connector:USB_C_Receptacle_USB2.0 J1
 U 1 1 5EBCB88F
@@ -1729,4 +1716,123 @@ Wire Wire Line
 	900  1950 1050 1950
 Wire Wire Line
 	900  2450 1050 2450
+$Comp
+L Device:Crystal_GND24_Small Y?
+U 1 1 5F9F5EB0
+P 2300 7000
+F 0 "Y?" H 2100 7100 50  0000 L CNN
+F 1 "12MHz 10ppm" H 2500 6650 50  0000 L CNN
+F 2 "Clocks:CRYSTAL-SMD-3.2X2.5MM" H 2300 7000 50  0001 C CNN
+F 3 "~" H 2300 7000 50  0001 C CNN
+	1    2300 7000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2800 6550 2050 6550
+Wire Wire Line
+	2600 6750 2800 6750
+Wire Wire Line
+	2400 7000 2600 7000
+Wire Wire Line
+	2600 7000 2600 6750
+Wire Wire Line
+	2050 7000 2200 7000
+Wire Wire Line
+	2050 6550 2050 7000
+$Comp
+L power:GND #PWR?
+U 1 1 5FA2F4DE
+P 2450 6700
+F 0 "#PWR?" H 2450 6450 50  0001 C CNN
+F 1 "GND" H 2455 6527 50  0000 C CNN
+F 2 "" H 2450 6700 50  0001 C CNN
+F 3 "" H 2450 6700 50  0001 C CNN
+	1    2450 6700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 6900 2300 6650
+Wire Wire Line
+	2300 6650 2450 6650
+Wire Wire Line
+	2450 6650 2450 6700
+$Comp
+L power:GND #PWR?
+U 1 1 5FA3DBFF
+P 2300 7350
+F 0 "#PWR?" H 2300 7100 50  0001 C CNN
+F 1 "GND" H 2400 7250 50  0000 C CNN
+F 2 "" H 2300 7350 50  0001 C CNN
+F 3 "" H 2300 7350 50  0001 C CNN
+	1    2300 7350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5FA4C70F
+P 2050 7150
+F 0 "C?" H 2150 7150 50  0000 L CNN
+F 1 "?pF" H 2100 7050 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 2050 7150 50  0001 C CNN
+F 3 "~" H 2050 7150 50  0001 C CNN
+	1    2050 7150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5FA9FCD0
+P 2600 7150
+F 0 "C?" H 2700 7150 50  0000 L CNN
+F 1 "?pF" H 2400 7050 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 2600 7150 50  0001 C CNN
+F 3 "~" H 2600 7150 50  0001 C CNN
+	1    2600 7150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2050 7250 2050 7300
+Wire Wire Line
+	2050 7300 2300 7300
+Wire Wire Line
+	2300 7100 2300 7300
+Wire Wire Line
+	2300 7350 2300 7300
+Connection ~ 2300 7300
+Wire Wire Line
+	2600 7250 2600 7300
+Wire Wire Line
+	2600 7300 2300 7300
+Wire Wire Line
+	2600 7050 2600 7000
+Connection ~ 2600 7000
+Wire Wire Line
+	2050 7050 2050 7000
+Connection ~ 2050 7000
+Text Notes 2500 7450 0    39   ~ 0
+This 12MHz Xtal is NOT needed when using CH340C
+Wire Notes Line
+	2700 6500 2700 7050
+Wire Notes Line
+	2700 7050 2850 7050
+Wire Notes Line
+	2850 7050 2850 7300
+Wire Notes Line
+	2850 7300 4100 7300
+Wire Notes Line
+	4100 7300 4100 7500
+Wire Notes Line
+	1900 6500 1900 7500
+Wire Notes Line
+	1900 6500 2700 6500
+$Comp
+L Regulator_Linear:TLV75533PDBV U?
+U 1 1 5FB0C8EF
+P 8950 5250
+F 0 "U?" H 8950 5592 50  0000 C CNN
+F 1 "TLV75533PDBV" H 8950 5501 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 8950 5575 50  0001 C CIN
+F 3 "http://www.ti.com/lit/ds/symlink/tlv755p.pdf" H 8950 5300 50  0001 C CNN
+	1    8950 5250
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
